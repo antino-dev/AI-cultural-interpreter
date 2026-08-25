@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CommonGround – Pro-Immigration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="chat-container">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <span class="header-back">&#8249;</span>
+      <div class="header-center">
+        <div class="header-status">
+          <span class="status-dot"></span>
+          <span class="header-title">CommonGround</span>
+        </div>
+        <span class="header-subtitle">Active now</span>
+      </div>
+      <span class="header-menu">···</span>
+    </div>
+
+    <!-- Notification banner -->
+    <div class="notification-banner">
+      <span class="notif-icon">🕊️</span>
+      <span class="notif-text">Different perspectives are welcome here. Listen with curiosity, speak with respect.</span>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-messages" id="chat-messages"></div>
+
+    <!-- Input -->
+    <div class="chat-input">
+      <div class="input-wrap">
+        <span class="input-icon">☺</span>
+        <textarea id="user-input" rows="1" placeholder="Type something…"></textarea>
+        <button class="send-icon-btn" id="send-icon-btn" title="Send">&#10148;</button>
+      </div>
+      <button id="send-button" style="display:none">Send</button>
+    </div>
+  </div>
+
+  <script>window.SCRIPT_SCENARIO = 'example';</script>
+  <script src="./script.js"></script>
+</body>
+</html>
