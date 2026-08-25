@@ -17,8 +17,8 @@ body {
 
 .chat-container {
   width: 100%;
-  max-width: 558px;
-  height: 680px;
+  max-width: 670px;
+  height: 748px;
   background: #f0f2f5;
   box-shadow: 0 12px 40px rgba(0,0,0,.13);
   display: flex;
@@ -228,7 +228,7 @@ body {
   outline: none;
   resize: none;
   overflow: hidden;
-  max-height: 100px;
+  max-height: 160px;
   line-height: 1.4;
 }
 
