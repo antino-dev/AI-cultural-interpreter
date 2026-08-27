@@ -23,23 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
     'officenorms': [
       { type: 'user', text: "My boss, Danny, keeps getting involved in little things around the office. He was worried that my desk was too empty and that people would think I wasn’t working, so I started leaving papers on it. He also sent me a note about pushing my chair in and once emailed the whole office because someone left a pizza box on the copy machine. It feels ridiculous. What’s going on?" },
       { type: 'chatbot', bubbles: [
-        { delay: [1500, 2000], text: "Danny may not see these as little things. In this office, visible signs of order, effort, and respect for shared space can affect how people judge someone’s professionalism." },
-        { delay: [1500, 2500], text: "He also seems to be correcting problems indirectly rather than confronting someone personally. What feels like unnecessary interference to you may be his way of maintaining office norms without embarrassing anyone." }
+        { delay: [3500, 4000], text: "Danny may not see these as little things. In this office, visible signs of order, effort, and respect for shared space can affect how people judge someone’s professionalism." },
+        { delay: [3500, 4500], text: "He also seems to be correcting problems indirectly rather than confronting someone personally. What feels like unnecessary interference to you may be his way of maintaining office norms without embarrassing anyone." }
       ] },
 
       { type: 'user', text: "Okay. So what should I do?" },
       { type: 'chatbot', bubbles: [
-        { delay: [1500, 2000], text: "Try treating these moments as information about local expectations rather than as personal criticism." },
-        { delay: [1500, 2500], text: "Pay attention to the signals that seem to matter in this office, including how people organize their workspace, behave in shared spaces, and present themselves to colleagues." },
-        { delay: [1500, 2500], text: "It may also help to talk with Danny privately and show that you want to understand expectations before problems come up. The goal is to learn which behaviors may carry a different meaning in this environment." }
+        { delay: [3500, 4000], text: "Try treating these moments as information about local expectations rather than as personal criticism." },
+        { delay: [3500, 4500], text: "Pay attention to the signals that seem to matter in this office, including how people organize their workspace, behave in shared spaces, and present themselves to colleagues." },
+        { delay: [3500, 4500], text: "It may also help to talk with Danny privately and show that you want to understand expectations before problems come up. The goal is to learn which behaviors may carry a different meaning in this environment." }
       ] },
 
       { type: 'user', text: "How should I actually talk to him?" },
       { type: 'chatbot', bubbles: [
-        { delay: [1500, 2000], text: "You could start with:\n“Danny, I want to make sure I’m understanding how things work in this office. I know there are probably expectations I’m still learning.”" },
-        { delay: [2000, 2500], text: "Then you could add:\n“If there are things I could do differently that would help me build credibility with the team, I’d really appreciate you telling me.”" },
-        { delay: [2000, 2500], text: "And if he brings up your desk again, you might simply say:\n“I didn’t realize an empty desk could be interpreted that way here. That’s helpful to know. I’ll keep it in mind.”" },
-        { delay: [1500, 2000], text: "Keep the conversation brief and curious. You do not need to defend why your original approach made sense. The goal is to show that you are listening and trying to understand the local context." }
+        { delay: [3500, 4000], text: "You could start with:\n“Danny, I want to make sure I’m understanding how things work in this office. I know there are probably expectations I’m still learning.”" },
+        { delay: [4000, 4500], text: "Then you could add:\n“If there are things I could do differently that would help me build credibility with the team, I’d really appreciate you telling me.”" },
+        { delay: [4000, 4500], text: "And if he brings up your desk again, you might simply say:\n“I didn’t realize an empty desk could be interpreted that way here. That’s helpful to know. I’ll keep it in mind.”" },
+        { delay: [3500, 4000], text: "Keep the conversation brief and curious. You do not need to defend why your original approach made sense. The goal is to show that you are listening and trying to understand the local context." }
       ] }
     ],
   };
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Pause before a bubble appears: a random point within its [min,max] range,
   // nudged longer for longer text so readers get more time on bigger bubbles.
   function bubbleDelay(bubble) {
-    const [min, max] = bubble.delay || [1500, 2000];
+    const [min, max] = bubble.delay || [3500, 4000];
     const readingBonus = Math.min(bubble.text.length * 2, 300);
     return randomBetween(min, max) + readingBonus;
   }
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // A chatbot turn is one or more bubbles, shown one at a time in sequence.
   function showChatbotTurn(msg, done) {
-    const bubbles = msg.bubbles || [{ text: msg.text, delay: [1500, 2000] }];
+    const bubbles = msg.bubbles || [{ text: msg.text, delay: [3500, 4000] }];
     let i = 0;
     (function step() {
       if (i >= bubbles.length) { done(); return; }
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (msg.type === 'chatbot') {
       showChatbotTurn(msg, () => {
         messageIndex++;
-        setTimeout(nextStep, 350);
+        setTimeout(nextStep, 2350);
       });
     } else {
       typeUserPrompt(msg);
